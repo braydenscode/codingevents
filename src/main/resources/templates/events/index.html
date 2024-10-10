@@ -27,6 +27,7 @@
         <td th:fragment="address">1234 5th St</td>
         <td><img th:src="@{/images/{eventName}.png(eventName=${event.name})}" alt="" style="max-height: 200px; max-width: 200px;"/></td>
         <td th:text="${event.id}"></td>
+        <td><a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a></td>
     </tr>
 </table>
 
