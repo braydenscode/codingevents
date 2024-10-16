@@ -14,6 +14,7 @@
         <tr>
             <th>Name</th>
             <th>Description</th>
+            <th>Contact Email</th>
             <th>Address</th>
             <th>Image</th>
             <th>ID</th>
@@ -22,6 +23,7 @@
     <tr th:each="event : ${events}">
             <td th:text="${event.name}"></td>
             <td th:text="${event.description}"></td>
+            <td th:text="${event.contactEmail}"></td>
 <!--        <td th:text="${event.key}"></td>-->
 <!--        <td th:text="${event.value}"></td>-->
         <td th:fragment="address">1234 5th St</td>

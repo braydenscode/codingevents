@@ -28,8 +28,8 @@ public class EventData {
     }
 
     static {
-        EventData.add(new Event("Menteaship", "A fun meetup for connecting with mentors"));
-        EventData.add(new Event("Code With Pride", "A fun meetup sponsored by LaunchCode"));
-        EventData.add(new Event("Javascripty", "An imaginary meetup for Javascript developers"));
+        EventData.add(new Event("Menteaship", "A fun meetup for connecting with mentors", "fake@email.com"));
+        EventData.add(new Event("Code With Pride", "A fun meetup sponsored by LaunchCode", "fake@email.com"));
+        EventData.add(new Event("Javascripty", "An imaginary meetup for Javascript developers", "fake@email.com"));
     }
 }
