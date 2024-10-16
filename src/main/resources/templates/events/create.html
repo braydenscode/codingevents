@@ -7,12 +7,9 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<!--<p th:text="${errorMsg}" style="color: red;"></p>-->
-
 <form method="post">
     <div class="form-group">
         <label>Name
-<!--        <input type="text" name="name" class="form-control">-->
             <input th:field="${event.name}" class="form-control">
         </label>
         <p class="error" th:errors="${event.name}"></p>
@@ -20,7 +17,6 @@
     <br>
     <div class="form-group">
         <label>Description
-<!--            <textarea name="description" class="form-control"></textarea>-->
             <input th:field="${event.description}" class="form-control">
         </label>
         <p class="error" th:errors="${event.description}"></p>
@@ -28,10 +24,37 @@
     <br>
     <div class="form-group">
         <label>Contact Email
-<!--            <input name="contactEmail" class="form-control">-->
             <input th:field="${event.contactEmail}" class="form-control">
         </label>
         <p class="error" th:errors="${event.contactEmail}"></p>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Location
+            <input th:field="${event.location}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.location}"></p>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Registration is required.
+            <input type="checkbox" th:field="${event.registration}">
+        </label>
+        <p class="error" th:errors="${event.registration}"></p>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Attendees
+            <input th:field="${event.attendees}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.attendees}"></p>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Date
+            <input type="date" th:field="${event.date}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.date}"></p>
     </div>
     <br>
     <div class="form-group">

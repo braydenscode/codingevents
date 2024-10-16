@@ -15,7 +15,10 @@
             <th>Name</th>
             <th>Description</th>
             <th>Contact Email</th>
-            <th>Address</th>
+            <th>Location</th>
+            <th>Registration Required</th>
+            <th>Attendees</th>
+            <th>Date</th>
             <th>Image</th>
             <th>ID</th>
         </tr>
@@ -24,9 +27,12 @@
             <td th:text="${event.name}"></td>
             <td th:text="${event.description}"></td>
             <td th:text="${event.contactEmail}"></td>
+            <td th:text="${event.location}"></td>
+            <td th:text="${event.registration}"></td>
+            <td th:text="${event.attendees}"></td>
+            <td th:text="${event.date}"></td>
 <!--        <td th:text="${event.key}"></td>-->
 <!--        <td th:text="${event.value}"></td>-->
-        <td th:fragment="address">1234 5th St</td>
         <td><img th:src="@{/images/{eventName}.png(eventName=${event.name})}" alt="" style="max-height: 200px; max-width: 200px;"/></td>
         <td th:text="${event.id}"></td>
         <td><a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a></td>

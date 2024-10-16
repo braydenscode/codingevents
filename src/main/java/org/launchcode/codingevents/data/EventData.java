@@ -2,6 +2,8 @@ package org.launchcode.codingevents.data;
 
 import org.launchcode.codingevents.models.Event;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,8 +30,8 @@ public class EventData {
     }
 
     static {
-        EventData.add(new Event("Menteaship", "A fun meetup for connecting with mentors", "fake@email.com"));
-        EventData.add(new Event("Code With Pride", "A fun meetup sponsored by LaunchCode", "fake@email.com"));
-        EventData.add(new Event("Javascripty", "An imaginary meetup for Javascript developers", "fake@email.com"));
+        EventData.add(new Event("Menteaship", "A fun meetup for connecting with mentors", "fake@email.com", "Place", true, 0, LocalDate.of(2025, 12, 25)));
+        EventData.add(new Event("Code With Pride", "A fun meetup sponsored by LaunchCode", "fake@email.com", "Place", true, 0, LocalDate.of(2025, 12, 25)));
+        EventData.add(new Event("Javascripty", "An imaginary meetup for Javascript developers", "fake@email.com", "Place", true, 0, LocalDate.of(2025, 12, 25)));
     }
 }

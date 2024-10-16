@@ -1,9 +1,8 @@
 package org.launchcode.codingevents.models;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Event {
@@ -22,10 +21,27 @@ public class Event {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-    public Event(String name, String description, String contactEmail) {
+    @NotBlank(message = "Location is required.")
+    @NotNull
+    private String location;
+
+    @AssertTrue
+    private boolean registration;
+
+    @Positive(message = "Number of attendees must be one or more.")
+    private int attendees;
+
+    @Future(message = "Date must be a future date.")
+    private LocalDate date;
+
+    public Event(String name, String description, String contactEmail, String location, boolean registration, int attendees, LocalDate date) {
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
+        this.location = location;
+        this.registration = registration;
+        this.attendees = attendees;
+        this.date = date;
         this.id = nextId;
         nextId++;
     }
@@ -57,6 +73,39 @@ public class Event {
 
     public void setContactEmail(@Email String contactEmail) {
         this.contactEmail = contactEmail;
+    }
+
+    public @NotBlank @NotNull String getLocation() {
+        return location;
+    }
+
+    public void setLocation(@NotBlank @NotNull String location) {
+        this.location = location;
+    }
+
+    public boolean isRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(boolean registration) {
+        this.registration = registration;
+    }
+
+    @Positive
+    public int getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(@Positive int attendees) {
+        this.attendees = attendees;
+    }
+
+    public @Future LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(@Future LocalDate date) {
+        this.date = date;
     }
 
     public int getId() {
